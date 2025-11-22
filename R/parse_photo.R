@@ -1,3 +1,12 @@
+#' Parse a photo and extract contour coordinates
+#'
+#' @param photopath Character
+#' The path of photo
+#'
+#' @returns A data frame
+#' @export
+#'
+#' @examples NULL
 parse_photo <- function(photopath){
 
   # load photo
@@ -17,6 +26,4 @@ parse_photo <- function(photopath){
   cl <- image.ContourDetector::image_contour_detector(mat)
 
   return(cl$data)
-
-
 }
