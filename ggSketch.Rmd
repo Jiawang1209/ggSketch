@@ -1,0 +1,80 @@
+---
+title: "ggSketch"
+author: "Jiawang Liu"
+date: "2025-11-22"
+output: github_document
+---
+
+# Install
+
+```
+# install.packages("devtools")
+devtools::install_github("Jiawang1209/ggSketch")
+```
+
+or
+
+```
+# install.packages("pak")
+pak::pak("Jiawang1209/ggSketch")
+```
+
+
+# Load R Package
+
+```{r}
+library(ggSketch)
+library(ggplot2)
+library(dplyr)
+library(patchwork)
+```
+
+
+# Example Data
+
+```{r}
+img1 <- system.file("extdata", "Kobe.png", package = "ggSketch")
+
+p1 <- ggSketch(photopath = img1,
+               color = "#000000",
+               linewidth = 0.3)
+
+p1
+
+```
+
+
+```{r}
+img2 <- system.file("extdata", "LeBron.png", package = "ggSketch")
+
+p2 <- ggSketch(photopath = img2,
+               color = "#000000",
+               linewidth = 0.3)
+
+p2
+
+```
+
+
+```{r}
+img3 <- system.file("extdata", "Kobe_LeBron.png", package = "ggSketch")
+
+p3 <- ggSketch(photopath = img3,
+               color = "#000000",
+               linewidth = 0.3)
+
+p3
+```
+
+
+```{r}
+p_combine <- (p1 + p2) / p3
+
+p_combine
+```
+
+# sessionInfo
+```{r}
+sessionInfo()
+```
+
